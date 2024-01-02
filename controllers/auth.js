@@ -23,6 +23,7 @@ exports.post_register = async function(req, res, next) {
     try {
         // throw new Error("hata oluştu");
         const newUser = await User.create({ fullname: fullname, email: email, password: password });
+        console.log(newUser);
 
         emailService.sendMail({
             from: config.email.from,

@@ -3,13 +3,13 @@
         <a href="/" class="navbar-brand">Event App</a>
         <ul class="navbar-nav me-auto">
             <li class="nav-item">
-                <a href="/blogs" class="nav-link">Event List</a>
+                <a href="/blogs" class="nav-link">Etkinlikler</a>
             </li>
 
             <% if (isAdmin || isModerator) { %>            
                 
                 <li class="nav-item">
-                    <a href="/admin/blogs" class="nav-link">Admin Etkinlik </a>
+                    <a href="/admin/blogs" class="nav-link">Etkinlik Düzenle</a>
                 </li>
                 <li class="nav-item">
                     <a href="/admin/blog/create" class="nav-link">Etkinlik Ekle </a>
@@ -20,7 +20,7 @@
             <% if (isAdmin) { %>
              
                 <li class="nav-item">
-                    <a href="/admin/categories" class="nav-link">Admin Kategori </a>
+                    <a href="/admin/categories" class="nav-link">Kategori Düzenle </a>
                 </li>
                 <li class="nav-item">
                     <a href="/admin/category/create" class="nav-link">Kategori Ekle </a>

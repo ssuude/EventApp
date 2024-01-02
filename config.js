@@ -6,9 +6,9 @@ const config = {
         database: "blogg"
     },
     email: {
-        username: "<email>",
-        password: "<parola>",
-        from: "<from_email>",
+        username: "koustajtakipsistemi41@hotmail.com",
+        password: "Koustajtakip41.",
+        from: "koustajtakipsistemi41@hotmail.com",
     }
 }
 
