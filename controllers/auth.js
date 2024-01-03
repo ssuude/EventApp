@@ -229,4 +229,22 @@ exports.post_newpassword = async function(req, res) {
     catch(err) {
         console.log(err);
     }
+
+
+    // // Email content
+    // const mailOptions = {
+    //     from: config.email.from,
+    //     to: email,
+    //     subject: 'Etkinlik Katılım',
+    //     html: `
+    //         <h1>${baslik}</h1>
+    //         <p>${altbaslik}</p>
+    //         <p>${new Date(tarih).toLocaleString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric' })}</p>
+    //         <p>${aciklama}</p>
+    //     `
+    // };
+    // req.session.message = { text: "Etkinlik bilgileri mail olarak iletildi.", class: "success"};
+
+    
+
 }
