@@ -11,11 +11,11 @@ async function populate() {
     if(count == 0) { 
 
         const users = await User.bulkCreate([
-            {fullname: "sadık turan", email: "info@sadikturan.com", password: await bcrypt.hash("135790", 10)},
-            {fullname: "çınar turan", email: "info@cinarturan.com", password: await bcrypt.hash("135790", 10)},
-            {fullname: "ada bilgi", email: "info@adabilgi.com", password: await bcrypt.hash("135790", 10)},
-            {fullname: "yiğit bilgi", email: "info@yigitbilgi.com", password: await bcrypt.hash("135790", 10)},
-            {fullname: "ahmet yılmaz", email: "info@agmetyilmaz.com", password: await bcrypt.hash("135790", 10)},
+            {fullname: "admin admin", email: "info@admin.com", password: await bcrypt.hash("135790", 10)},
+            {fullname: "emre yılmaz", email: "info@emreyilmaz.com", password: await bcrypt.hash("135790", 10)},
+            {fullname: "deniz kaya", email: "info@denizkaya.com", password: await bcrypt.hash("135790", 10)},
+            {fullname: "serkan demir", email: "info@serkandemir.com", password: await bcrypt.hash("135790", 10)},
+            {fullname: "elif yıldırım", email: "info@elifyildirim.com", password: await bcrypt.hash("135790", 10)},
         ]);
 
         const roles = await Role.bulkCreate([
@@ -24,22 +24,24 @@ async function populate() {
             {rolename: "guest"},
         ]);
 
-        await users[0].addRole(roles[0]);   // admin => sadikturan
+        await users[0].addRole(roles[0]);   // admin => admin
         
-        await users[1].addRole(roles[1]);   // moderator => cinarturan
-        await users[2].addRole(roles[1]);   // moderator => adabilgi
+        await users[1].addRole(roles[1]);   // moderator => emreyilmaz
+        await users[2].addRole(roles[1]);   // moderator => denizkaya
 
-        await users[3].addRole(roles[2]);   // guest => yigitbilgi
-        await users[4].addRole(roles[2]);   // guest => ahmetyilmaz
+        await users[3].addRole(roles[2]);   // guest => serkandemir
+        await users[4].addRole(roles[2]);   // guest => elifyildirim
 
         const categories = await Category.bulkCreate([
             { name: "Web Geliştirme",url: slugField("Web Geliştirme"), },
             { name: "Mobil Geliştirme",url: slugField("Mobil Geliştirme"), },
-            { name: "Programlama",url: slugField("Programlama"), },
+            { name: "Finans",url: slugField("Finans"), },
             { name: "Veri Analizi",url: slugField("Veri Analizi"), },
             { name: "Yapay Zeka ",url: slugField("Yapay Zeka"), },
             { name: "Pazarlama",url: slugField("Pazarlama"), },
             { name: "Ekonomi",url: slugField("Ekonomi"), },
+            { name: "İşletme",url: slugField("İşletme"), },
+            { name: "Girişimcilik",url: slugField("Girişimcilik"), },
 
         ]);
 
@@ -89,7 +91,7 @@ async function populate() {
                 baslik: "Ekonomi Üzerine",
                 url: slugField("Ekonomi üzerine"),
                 altbaslik: "Ekonomi üzerine Bir Seminer",
-                aciklama: "En popüler programlama dili olan Javascript programlama dilini artık Node.js sayesinde server tabanlı bir dil olarak kullanabilirsin.Kurs sonunda sadece Javascript programlama dilini kullanarak Fullstack bir web geliştirici olmak istiyorsan hemen kursa katılmalısın! Üstelik 30 gün iade garantisiyle! Kursumuz piyasadaki en popüler ve en güncel Node.js kursudur.",
+                aciklama: "Ekonominin tarihinin Mezapotamya kültürüne kadar uzandığına dair yazıtlar bulunmkatadır. Modern ekonominin gelişimi büyük ölçüdefizyokrat ve merkantilist olarak bilinen iki gruptan kaynaklanmaktadır. Bu programlar 16. yüzyılda Avrupa'da kapitalizmin gelişmesine yardımcı olmuşlardır.",
                 resim: "4.jpeg",
                 anasayfa: true,
                 onay: true,
@@ -97,10 +99,10 @@ async function populate() {
             }
             ,
             {
-                baslik: "Node.js ile Sıfırdan İleri Seviye Web Geliştirme",
-                url: slugField("Node.js ile Sıfırdan İleri Seviye Web Geliştirme"),
-                altbaslik: "Node.js ile sıfırdan ileri seviye dinamik web uygulaması geliştirmeyi öğren.",
-                aciklama: "En popüler programlama dili olan Javascript programlama dilini artık Node.js sayesinde server tabanlı bir dil olarak kullanabilirsin.Kurs sonunda sadece Javascript programlama dilini kullanarak Fullstack bir web geliştirici olmak istiyorsan hemen kursa katılmalısın! Üstelik 30 gün iade garantisiyle! Kursumuz piyasadaki en popüler ve en güncel Node.js kursudur.",
+                baslik: "Finansçı Olmayanlar İçin Temel Finans Eğitimi",
+                url: slugField("Finansçı Olmayanlar İçin Temel Finans Eğitimi"),
+                altbaslik: "Temel düzeyde finans öğren.",
+                aciklama: "Finansal terimlerin sizi korkutmasına ve ilerlemenize engel olmasına izin vermeyin. Günümüzün rekabetçi dünyasında başarıya ulaşmak ve bilinçli kararlar almak için finansal dilin gücünden faydalanın. ",
                 resim: "",
                 anasayfa: true,
                 onay: true,
@@ -119,10 +121,10 @@ async function populate() {
             }
             ,
             {
-                baslik: "Node.js ile Sıfırdan İleri Seviye Web Geliştirme",
-                url: slugField("Node.js ile Sıfırdan İleri Seviye Web Geliştirme"),
-                altbaslik: "Node.js ile sıfırdan ileri seviye dinamik web uygulaması geliştirmeyi öğren.",
-                aciklama: "En popüler programlama dili olan Javascript programlama dilini artık Node.js sayesinde server tabanlı bir dil olarak kullanabilirsin.Kurs sonunda sadece Javascript programlama dilini kullanarak Fullstack bir web geliştirici olmak istiyorsan hemen kursa katılmalısın! Üstelik 30 gün iade garantisiyle! Kursumuz piyasadaki en popüler ve en güncel Node.js kursudur.",
+                baslik: "Halkla İlişkiler Eğitimi",
+                url: slugField("Halkla İlişkiler Eğitimi"),
+                altbaslik: "i öğren.",
+                aciklama: "CRM, işletmelerin müşterilerini elde tutmasını sağlayan bir iş sürecidir. Bu sistem iyi işlerse başarının anahtarını elinize alır ve rekabet avantajı sağlarsınız. Bu alanda uzmanlaşmak istiyorsanız müşteri ilişkileri yönetimi online eğitimine hemen katılın.",
                 resim: "4.jpeg",
                 anasayfa: true,
                 onay: true,
@@ -130,10 +132,10 @@ async function populate() {
             }
             ,
             {
-                baslik: "Node.js ile Sıfırdan İleri Seviye Web Geliştirme",
-                url: slugField("Node.js ile Sıfırdan İleri Seviye Web Geliştirme"),
+                baslik: "GİRİŞİMCİLİK EĞİTİMİ",
+                url: slugField("GİRİŞİMCİLİK EĞİTİMİ"),
                 altbaslik: "Node.js ile sıfırdan ileri seviye dinamik web uygulaması geliştirmeyi öğren.",
-                aciklama: "En popüler programlama dili olan Javascript programlama dilini artık Node.js sayesinde server tabanlı bir dil olarak kullanabilirsin.Kurs sonunda sadece Javascript programlama dilini kullanarak Fullstack bir web geliştirici olmak istiyorsan hemen kursa katılmalısın! Üstelik 30 gün iade garantisiyle! Kursumuz piyasadaki en popüler ve en güncel Node.js kursudur.",
+                aciklama: "Girişimcilik Eğitimi, girişimcilik kültürünü yaygınlaştırmak ve girişimcileri iş planı kavramı ile tanıştırarak başarılı işletmelerin kurulmasını sağlamak amacı ile verilir. Eğitim sonunda girişimci adaylarının kendi iş fikirlerine yönelik iş planlarını hazırlayabilecek bilgi ve deneyimi kazanmaları hedeflenir.",
                 resim: "4.jpeg",
                 anasayfa: true,
                 onay: true,
